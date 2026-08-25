@@ -1,0 +1,79 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMHvnwg3qDIFrH79vF+l0FT",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/adjamahfud-arch/Proyek-coding-/blob/main/sistem%20pendaftaran%20sederhana.inpy\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#variable digunakan untuk menyimpan input\n",
+        "siswa = []\n",
+        "#fungsi untuk menentukan lulus/tidak\n",
+        "def total(nilai):\n",
+        "    if nilai >= 90:\n",
+        "       return \"sangat bagus\"\n",
+        "    elif nilai >= 70:\n",
+        "       return \"lulus\"\n",
+        "    else:\n",
+        "       return \"tidak lulus\"\n",
+        "#fungsi untuk menampilkan hasil\n",
+        "def pilihan(tampilan):\n",
+        "    for orang in siswa:\n",
+        "        if tampilan == \"ya\":\n",
+        "            hasil =total(orang[\"nilai\"])\n",
+        "            print(f\"hasil:{orang['nama']} ~ {orang['nilai']} ~ {hasil}\")\n",
+        "        else:\n",
+        "            print(\"terimakasih\")\n",
+        "\n",
+        "print(\"===pendaftaran sederhana===\")\n",
+        "\n",
+        "pilih = \"ya\"\n",
+        "#logika perulangan\n",
+        "while pilih == \"ya\":\n",
+        "      nama1 =input(\"masukan nama:\")\n",
+        "      nilai =float(input(\"Masukan nilai:\"))\n",
+        "      data = {\n",
+        "            \"nama\": nama1,\n",
+        "            \"nilai\": nilai\n",
+        "}\n",
+        "      siswa.append(data)\n",
+        "      pilih =input(\"mau masukin nama lagi? YA/tidak:\").lower()\n",
+        "\n",
+        "\n",
+        "tampilan =input(\"apakah mau melihat hasil? YA/TIDAK:\").lower()\n",
+        "#hasil\n",
+        "print(\"-\" * 30)\n",
+        "pilihan(tampilan)\n",
+        "print(\"-\" * 30)"
+      ],
+      "metadata": {
+        "id": "Bhf-lSUyxYIA"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
